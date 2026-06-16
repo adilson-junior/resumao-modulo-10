@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /build/
+    destination: /home/ubuntu/app
+
+hooks:
+  BeforeInstall:
+    - location: Scripts/before_install.sh
+      timeout: 100
+      runas: ubuntu
+
+  AfterInstall:
+    - location: Scripts/after_install.sh
+      timeout: 100
+      runas: ubuntu
+
+  ValidateService:
+    - location: Scripts/validate_service.sh
+      timeout: 100
+      runas: ubuntu
