@@ -1,3 +1,3 @@
 #!/bin/bash
-systemctl start httpd.service
-systemctl enable httpd.service
+sudo systemctl enable apache2
+sudo systemctl restart apache2
